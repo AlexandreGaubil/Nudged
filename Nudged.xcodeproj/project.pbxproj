@@ -3,17 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		086F551F22E4CA9A0042CFD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086F551E22E4CA9A0042CFD7 /* AppDelegate.swift */; };
 		086F552122E4CA9A0042CFD7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086F552022E4CA9A0042CFD7 /* FirstViewController.swift */; };
-		086F552322E4CA9A0042CFD7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086F552222E4CA9A0042CFD7 /* SecondViewController.swift */; };
+		086F552322E4CA9A0042CFD7 /* HistoryElectricityConsumptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086F552222E4CA9A0042CFD7 /* HistoryElectricityConsumptionVC.swift */; };
 		086F552622E4CA9A0042CFD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086F552422E4CA9A0042CFD7 /* Main.storyboard */; };
 		086F552822E4CA9B0042CFD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086F552722E4CA9B0042CFD7 /* Assets.xcassets */; };
 		086F552B22E4CA9B0042CFD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086F552922E4CA9B0042CFD7 /* LaunchScreen.storyboard */; };
 		086F553622E4CA9B0042CFD7 /* NudgedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086F553522E4CA9B0042CFD7 /* NudgedTests.swift */; };
+		087843CD22E4CFCF00988CE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 087843CC22E4CFCF00988CE9 /* GoogleService-Info.plist */; };
+		087843CE22E4CFCF00988CE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 087843CC22E4CFCF00988CE9 /* GoogleService-Info.plist */; };
+		087843D122E4D14F00988CE9 /* read_user_information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087843D022E4D14F00988CE9 /* read_user_information.swift */; };
+		087843D222E4D14F00988CE9 /* read_user_information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087843D022E4D14F00988CE9 /* read_user_information.swift */; };
+		087843D522E4D23800988CE9 /* HouseDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087843D422E4D23800988CE9 /* HouseDetails.swift */; };
+		087843D622E4D23800988CE9 /* HouseDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087843D422E4D23800988CE9 /* HouseDetails.swift */; };
+		087843D822E4D2F800988CE9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087843D722E4D2F800988CE9 /* MapKit.framework */; };
+		32D3FAC5668255D40CB05449 /* Pods_Nudged.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE1066E9878648901240DC6 /* Pods_Nudged.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +38,7 @@
 		086F551B22E4CA9A0042CFD7 /* Nudged.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nudged.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		086F551E22E4CA9A0042CFD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		086F552022E4CA9A0042CFD7 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		086F552222E4CA9A0042CFD7 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		086F552222E4CA9A0042CFD7 /* HistoryElectricityConsumptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryElectricityConsumptionVC.swift; sourceTree = "<group>"; };
 		086F552522E4CA9A0042CFD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		086F552722E4CA9B0042CFD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		086F552A22E4CA9B0042CFD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +46,13 @@
 		086F553122E4CA9B0042CFD7 /* NudgedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NudgedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		086F553522E4CA9B0042CFD7 /* NudgedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgedTests.swift; sourceTree = "<group>"; };
 		086F553722E4CA9B0042CFD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		087843CC22E4CFCF00988CE9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		087843D022E4D14F00988CE9 /* read_user_information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = read_user_information.swift; sourceTree = "<group>"; };
+		087843D422E4D23800988CE9 /* HouseDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetails.swift; sourceTree = "<group>"; };
+		087843D722E4D2F800988CE9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0FE1066E9878648901240DC6 /* Pods_Nudged.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nudged.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE3E0577BF8BF2D7E77DD23E /* Pods-Nudged.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nudged.debug.xcconfig"; path = "Target Support Files/Pods-Nudged/Pods-Nudged.debug.xcconfig"; sourceTree = "<group>"; };
+		D2799A5F0D204AB18286AB91 /* Pods-Nudged.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nudged.release.xcconfig"; path = "Target Support Files/Pods-Nudged/Pods-Nudged.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087843D822E4D2F800988CE9 /* MapKit.framework in Frameworks */,
+				32D3FAC5668255D40CB05449 /* Pods_Nudged.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +75,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00E28AD753CAB655719F1D0B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE3E0577BF8BF2D7E77DD23E /* Pods-Nudged.debug.xcconfig */,
+				D2799A5F0D204AB18286AB91 /* Pods-Nudged.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		086F551222E4CA9A0042CFD7 = {
 			isa = PBXGroup;
 			children = (
 				086F551D22E4CA9A0042CFD7 /* Nudged */,
 				086F553422E4CA9B0042CFD7 /* NudgedTests */,
 				086F551C22E4CA9A0042CFD7 /* Products */,
+				00E28AD753CAB655719F1D0B /* Pods */,
+				AAD387F76020111A7A513646 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +107,10 @@
 		086F551D22E4CA9A0042CFD7 /* Nudged */ = {
 			isa = PBXGroup;
 			children = (
-				086F551E22E4CA9A0042CFD7 /* AppDelegate.swift */,
-				086F552022E4CA9A0042CFD7 /* FirstViewController.swift */,
-				086F552222E4CA9A0042CFD7 /* SecondViewController.swift */,
-				086F552422E4CA9A0042CFD7 /* Main.storyboard */,
-				086F552722E4CA9B0042CFD7 /* Assets.xcassets */,
-				086F552922E4CA9B0042CFD7 /* LaunchScreen.storyboard */,
-				086F552C22E4CA9B0042CFD7 /* Info.plist */,
+				087843DA22E4D40200988CE9 /* iOS */,
+				087843D922E4D3EC00988CE9 /* UI */,
+				087843CF22E4D13500988CE9 /* Firestore */,
+				087843D322E4D21700988CE9 /* Database objects */,
 			);
 			path = Nudged;
 			sourceTree = "<group>";
@@ -99,6 +124,53 @@
 			path = NudgedTests;
 			sourceTree = "<group>";
 		};
+		087843CF22E4D13500988CE9 /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				087843CC22E4CFCF00988CE9 /* GoogleService-Info.plist */,
+				087843D022E4D14F00988CE9 /* read_user_information.swift */,
+			);
+			path = Firestore;
+			sourceTree = "<group>";
+		};
+		087843D322E4D21700988CE9 /* Database objects */ = {
+			isa = PBXGroup;
+			children = (
+				087843D422E4D23800988CE9 /* HouseDetails.swift */,
+			);
+			path = "Database objects";
+			sourceTree = "<group>";
+		};
+		087843D922E4D3EC00988CE9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				086F552922E4CA9B0042CFD7 /* LaunchScreen.storyboard */,
+				086F552422E4CA9A0042CFD7 /* Main.storyboard */,
+				086F552022E4CA9A0042CFD7 /* FirstViewController.swift */,
+				086F552222E4CA9A0042CFD7 /* HistoryElectricityConsumptionVC.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		087843DA22E4D40200988CE9 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				086F551E22E4CA9A0042CFD7 /* AppDelegate.swift */,
+				086F552C22E4CA9B0042CFD7 /* Info.plist */,
+				086F552722E4CA9B0042CFD7 /* Assets.xcassets */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		AAD387F76020111A7A513646 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				087843D722E4D2F800988CE9 /* MapKit.framework */,
+				0FE1066E9878648901240DC6 /* Pods_Nudged.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 086F553A22E4CA9B0042CFD7 /* Build configuration list for PBXNativeTarget "Nudged" */;
 			buildPhases = (
+				A80921A8A9128B5421F9FF66 /* [CP] Check Pods Manifest.lock */,
 				086F551722E4CA9A0042CFD7 /* Sources */,
 				086F551822E4CA9A0042CFD7 /* Frameworks */,
 				086F551922E4CA9A0042CFD7 /* Resources */,
+				85B58B29AAC6FF3FF1F8A841 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				086F552B22E4CA9B0042CFD7 /* LaunchScreen.storyboard in Resources */,
+				087843CD22E4CFCF00988CE9 /* GoogleService-Info.plist in Resources */,
 				086F552822E4CA9B0042CFD7 /* Assets.xcassets in Resources */,
 				086F552622E4CA9A0042CFD7 /* Main.storyboard in Resources */,
 			);
@@ -190,18 +265,63 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087843CE22E4CFCF00988CE9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		85B58B29AAC6FF3FF1F8A841 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nudged/Pods-Nudged-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nudged/Pods-Nudged-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nudged/Pods-Nudged-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A80921A8A9128B5421F9FF66 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nudged-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		086F551722E4CA9A0042CFD7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				086F552322E4CA9A0042CFD7 /* SecondViewController.swift in Sources */,
+				086F552322E4CA9A0042CFD7 /* HistoryElectricityConsumptionVC.swift in Sources */,
 				086F551F22E4CA9A0042CFD7 /* AppDelegate.swift in Sources */,
+				087843D522E4D23800988CE9 /* HouseDetails.swift in Sources */,
+				087843D122E4D14F00988CE9 /* read_user_information.swift in Sources */,
 				086F552122E4CA9A0042CFD7 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +330,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087843D622E4D23800988CE9 /* HouseDetails.swift in Sources */,
+				087843D222E4D14F00988CE9 /* read_user_information.swift in Sources */,
 				086F553622E4CA9B0042CFD7 /* NudgedTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,11 +484,12 @@
 		};
 		086F553B22E4CA9B0042CFD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE3E0577BF8BF2D7E77DD23E /* Pods-Nudged.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W445EX6ZVB;
-				INFOPLIST_FILE = Nudged/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Nudged/iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,11 +503,12 @@
 		};
 		086F553C22E4CA9B0042CFD7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2799A5F0D204AB18286AB91 /* Pods-Nudged.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W445EX6ZVB;
-				INFOPLIST_FILE = Nudged/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Nudged/iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
