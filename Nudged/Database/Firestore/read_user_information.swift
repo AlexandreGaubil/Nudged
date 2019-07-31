@@ -14,9 +14,9 @@ func read_user_information(identifier: String, completion: @escaping (HouseDetai
     if identifier == "" {
         completion(nil, nil)
     } else {
-        db.collection("houses").document(identifier).getDocument(completion: {(querySnapshot, error) in
+        db.collection("houses/Singapore/01").document(identifier).getDocument(completion: {(querySnapshot, error) in
             if let querySnapshot = querySnapshot {
-                let houseDetails = HouseDetails.init(querySnapshot.data()!, identifier: identifier)
+                let houseDetails = HouseDetails.init(querySnapshot.data() ?? [:], identifier: identifier)
                 completion(houseDetails, error)
             } else {
                 completion(nil, nil)

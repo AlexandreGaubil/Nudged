@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		08359D6522EB5A2900468B88 /* normal_electric_consumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08359D6422EB5A2900468B88 /* normal_electric_consumption.swift */; };
 		08359D6722EB5A5100468B88 /* HouseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08359D6622EB5A5100468B88 /* HouseType.swift */; };
+		083DEC0722EE065C00488A88 /* String extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DEC0622EE065C00488A88 /* String extension.swift */; };
 		086F551F22E4CA9A0042CFD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086F551E22E4CA9A0042CFD7 /* AppDelegate.swift */; };
 		086F552122E4CA9A0042CFD7 /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086F552022E4CA9A0042CFD7 /* HomeScreenVC.swift */; };
 		086F552322E4CA9A0042CFD7 /* HistoryElectricityConsumptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086F552222E4CA9A0042CFD7 /* HistoryElectricityConsumptionVC.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		08359D6422EB5A2900468B88 /* normal_electric_consumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = normal_electric_consumption.swift; sourceTree = "<group>"; };
 		08359D6622EB5A5100468B88 /* HouseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseType.swift; sourceTree = "<group>"; };
+		083DEC0622EE065C00488A88 /* String extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String extension.swift"; sourceTree = "<group>"; };
 		086F551B22E4CA9A0042CFD7 /* Nudged.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nudged.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		086F551E22E4CA9A0042CFD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		086F552022E4CA9A0042CFD7 /* HomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				08FC91E322EB60FE002DABBF /* make_button_inverted.swift */,
 				08FC91E722EB6A75002DABBF /* fading_animations.swift */,
 				08FC91E922EB6EB6002DABBF /* create_alert_view.swift */,
+				083DEC0622EE065C00488A88 /* String extension.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				08FC91E822EB6A75002DABBF /* fading_animations.swift in Sources */,
 				08FC91E622EB6615002DABBF /* UserDefaults keys.swift in Sources */,
 				086F552122E4CA9A0042CFD7 /* HomeScreenVC.swift in Sources */,
+				083DEC0722EE065C00488A88 /* String extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

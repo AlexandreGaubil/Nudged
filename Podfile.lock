@@ -68,11 +68,13 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.7.0)
+  - ScrollableGraphView (4.0.6)
 
 DEPENDENCIES:
   - FirebaseAuth
   - FirebaseCore
   - FirebaseFirestore
+  - ScrollableGraphView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -88,6 +90,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - ScrollableGraphView
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -102,7 +105,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
+  ScrollableGraphView: 4af35d4ea9ecdec665d34a74da51da161ddff8ac
 
-PODFILE CHECKSUM: 1f7db5ca44e8402c04c018d429b528c487cbcdd5
+PODFILE CHECKSUM: fb68d1da6c09dd8802b0bcca16c4be8d4a7db9af
 
 COCOAPODS: 1.7.0

@@ -83,7 +83,6 @@ class StartupVC: UIViewController {
                 self.type_of_house.fadeIn()
                 self.continue_button.fadeIn()
             }
-            
         }
     }
 }

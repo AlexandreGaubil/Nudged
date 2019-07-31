@@ -18,16 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t4H-Ia-5ho">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                            </stackView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHR-hi-3U8">
+                                <rect key="frame" x="0.0" y="394" width="414" height="419"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="t4H-Ia-5ho" secondAttribute="bottom" id="FzN-RE-mYB"/>
-                            <constraint firstItem="t4H-Ia-5ho" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="RHo-9B-w8W"/>
-                            <constraint firstItem="t4H-Ia-5ho" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="T1I-pK-j8K"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="t4H-Ia-5ho" secondAttribute="trailing" id="Uc7-Qg-slH"/>
+                            <constraint firstItem="dHR-hi-3U8" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="350" id="7D2-aQ-lK2"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="dHR-hi-3U8" secondAttribute="bottom" id="TGB-ae-yzN"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="dHR-hi-3U8" secondAttribute="trailing" id="Zdy-pK-lEQ"/>
+                            <constraint firstItem="dHR-hi-3U8" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="kTE-Iq-ax4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
@@ -35,12 +35,12 @@
                         <color key="badgeColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="stackView" destination="t4H-Ia-5ho" id="Ljw-JS-22V"/>
+                        <outlet property="scroll_view" destination="dHR-hi-3U8" id="ovB-VI-lnY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="694" y="0.0"/>
         </scene>
         <!--History Electricity ConsumptionVC-->
         <scene sceneID="wg7-f3-ORb">
@@ -58,7 +58,7 @@
                                     <segment title="Year"/>
                                     <segment title="All"/>
                                 </segments>
-                                <color key="tintColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                <color key="tintColor" red="0.58823529409999997" green="0.73725490199999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="time_graph_selector_SC_value_changed:" destination="8rJ-Kc-sve" eventType="valueChanged" id="ffY-vv-Tvf"/>
                                 </connections>
@@ -116,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="1361" y="0.0"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="g0D-XS-Psg">
@@ -135,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEJ-v3-EG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="1033"/>
+            <point key="canvasLocation" x="2016" y="0.0"/>
         </scene>
         <!--StartupVC-->
         <scene sceneID="g35-au-7Ks">
@@ -280,7 +280,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-841" y="-597"/>
+            <point key="canvasLocation" x="-851" y="0.0"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -290,8 +290,8 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
-                        <color key="selectedImageTintColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                        <color key="tintColor" red="0.58823529409999997" green="0.73725490199999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.58823529409999997" green="0.73725490199999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
