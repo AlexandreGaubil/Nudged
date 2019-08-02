@@ -34,13 +34,33 @@ class HomeScreenVC: UIViewController {
         comparison_view.layer.cornerRadius = comparison_view.frame.size.width / 2
         comparison_view.layer.masksToBounds = true
         comparison_view.layer.borderWidth = 5
-        comparison_view.layer.borderColor = #colorLiteral(red: 0.5882352941, green: 0.737254902, blue: 0.368627451, alpha: 1)
+        comparison_view.layer.borderColor = UIColor(named: "green-color")?.cgColor
         
-        let percentileLabel = UILabel(frame: CGRect(x: 100, y: 50, width: 100, height: 50))
-        percentileLabel.text = String(describing: compare_house_consumption_to_houses_with_same_postal_code()) + " %"
-        percentileLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.title1)
-        percentileLabel.textAlignment = .center
-        comparison_view.addSubview(percentileLabel)
+        let percentile_label = UILabel(frame: CGRect(x: 100, y: 50, width: 100, height: 50))
+        percentile_label.text = String(describing: compare_house_consumption_to_houses_with_same_postal_code()) + " %"
+        percentile_label.font = UIFont.preferredFont(forTextStyle: .title1)
+        percentile_label.textAlignment = .center
+        comparison_view.addSubview(percentile_label)
+        
+        let percentile_info_label = UILabel(frame: CGRect(x: 20, y: 100, width: 260, height: 40))
+        percentile_info_label.text = "of people have a worst electric consumption than you"
+        percentile_info_label.font = UIFont.preferredFont(forTextStyle: .caption1)
+        percentile_info_label.textAlignment = .center
+        percentile_info_label.numberOfLines = 0
+        comparison_view.addSubview(percentile_info_label)
+        
+        let amount_saved_label = UILabel(frame: CGRect(x: 100, y: 140, width: 100, height: 50))
+        amount_saved_label.text = String(describing: amount_saved()) + " $"
+        amount_saved_label.font = UIFont.preferredFont(forTextStyle: .title1)
+        amount_saved_label.textAlignment = .center
+        comparison_view.addSubview(amount_saved_label)
+        
+        let amount_saved_info_label = UILabel(frame: CGRect(x: 20, y: 190, width: 260, height: 40))
+        amount_saved_info_label.text = "amount you can save this month on electric bills"
+        amount_saved_info_label.font = UIFont.preferredFont(forTextStyle: .caption1)
+        amount_saved_info_label.textAlignment = .center
+        amount_saved_info_label.numberOfLines = 0
+        comparison_view.addSubview(amount_saved_info_label)
         
         view.addSubview(comparison_view)
         
@@ -56,12 +76,12 @@ class HomeScreenVC: UIViewController {
         scroll_view.addSubview(tip_label_title)
         scroll_view.contentSize.height = 50
         
-        scroll_view.addSubview(create_new_tip(title: "Unplug unused appliances", subtitle: "Unused appliances, even turned off, consume power will plugged in.", url: "www.apple.com"))
-        scroll_view.addSubview(create_new_tip(title: "Unplug two appliances", subtitle: "Unused appliances, even turned off, consume power will plugged in.", url: "www.apple.com"))
-        scroll_view.addSubview(create_new_tip(title: " 😅", subtitle: "Unused appliances, even turned off, consume power will plugged in.", url: "www.apple.com"))
-        scroll_view.addSubview(create_new_tip(title: "Unplug unused appliances", subtitle: "Unused appliances, even turned off, consume power will plugged in.", url: "www.apple.com"))
-        scroll_view.addSubview(create_new_tip(title: "Unplug two appliances", subtitle: "Unused appliances, even turned off, consume power will plugged in.", url: "www.apple.com"))
-        scroll_view.addSubview(create_new_tip(title: " 😅", subtitle: "Unused appliances, even turned off, consume power will plugged in.", url: "www.apple.com"))
+        scroll_view.addSubview(create_new_tip(title: "Unplug unused appliances", subtitle: "Unused appliances, even turned off, consume power while plugged in.", url: "www.apple.com"))
+        scroll_view.addSubview(create_new_tip(title: "Unplug two appliances", subtitle: "Unused appliances, even turned off, consume power while plugged in.", url: "www.apple.com"))
+        scroll_view.addSubview(create_new_tip(title: " 😅", subtitle: "Unused appliances, even turned off, consume power while plugged in.", url: "www.apple.com"))
+        scroll_view.addSubview(create_new_tip(title: "Unplug unused appliances", subtitle: "Unused appliances, even turned off, consume power while plugged in.", url: "www.apple.com"))
+        scroll_view.addSubview(create_new_tip(title: "Unplug two appliances", subtitle: "Unused appliances, even turned off, consume power while plugged in.", url: "www.apple.com"))
+        scroll_view.addSubview(create_new_tip(title: " 😅", subtitle: "Unused appliances, even turned off, consume power while plugged in.", url: "www.apple.com"))
         
         scroll_view.contentSize.height += 10
     }
@@ -69,7 +89,7 @@ class HomeScreenVC: UIViewController {
     func create_new_tip(title: String, subtitle: String, url: String) -> UIView {
         let tip_view = UIView(frame: CGRect(x: 20, y: scroll_view.contentSize.height + 6, width: UIScreen.main.bounds.width - 40, height: 100))
         scroll_view.contentSize.height += 106
-        tip_view.backgroundColor = #colorLiteral(red: 0.1568627451, green: 0.5921568627, blue: 0.6901960784, alpha: 0.5090699914)
+        tip_view.backgroundColor = #colorLiteral(red: 0.93152982, green: 0.93152982, blue: 0.93152982, alpha: 1)
         
         let title_label = UILabel(frame: CGRect(x: 5, y: 0, width: UIScreen.main.bounds.width - 50, height: 30))
         title_label.text = title

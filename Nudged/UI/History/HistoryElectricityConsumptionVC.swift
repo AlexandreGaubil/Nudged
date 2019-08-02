@@ -25,7 +25,7 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
     func label(atIndex pointIndex: Int) -> String {
         switch type_of_graph {
         case "week": return (week_dates[pointIndex]).substring(toIndex: 2)
-        case "month": return (month_dates[pointIndex]).substring(toIndex: 2)
+        case "month": return "" //return (month_dates[pointIndex]).substring(toIndex: 2)
         case "year": return year_dates[pointIndex]
         case "all": return all_dates[pointIndex]
         default: return "err"
@@ -41,7 +41,6 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
         default: return 0
         }
     }
-    
     
     var weekly_history: [Double?] = []
     var monthly_history: [Double?] = []
@@ -95,7 +94,7 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
         all_history = []
         
         for i in 0...100 {
-            all_dates.append(String(Int(year_date_formatter.string(from: Date.init())) ?? 2019 - i))
+            all_dates.append(String((Int(year_date_formatter.string(from: Date.init())) ?? 2019) - i))
         }
         
         for i in [0, 24, 48, 72, 96, 120, 144] {
@@ -107,56 +106,57 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
             month_dates.append(date_formatter.string(from: date))
         }
         switch month_date_formatter.string(from: Date.init()) {
-        case "01": year_dates = ["JA", "FE", "MR", "AP", "MA", "JN", "JL", "AU", "SE", "OC", "NO", "DE"]
-        case "02": year_dates = ["FE", "MR", "AP", "MA", "JN", "JL", "AU", "SE", "OC", "NO", "DE", "JA"]
-        case "03": year_dates = ["MR", "AP", "MA", "JN", "JL", "AU", "SE", "OC", "NO", "DE", "JA", "FE"]
-        case "04": year_dates = ["AP", "MA", "JN", "JL", "AU", "SE", "OC", "NO", "DE", "JA", "FE", "MR"]
-        case "05": year_dates = ["MA", "JN", "JL", "AU", "SE", "OC", "NO", "DE", "JA", "FE", "MR", "AP"]
-        case "06": year_dates = ["JN", "JL", "AU", "SE", "OC", "NO", "DE", "JA", "FE", "MR", "AP", "MA"]
-        case "07": year_dates = ["JL", "AU", "SE", "OC", "NO", "DE", "JA", "FE", "MR", "AP", "MA", "JN"]
-        case "08": year_dates = ["AU", "SE", "OC", "NO", "DE", "JA", "FE", "MR", "AP", "MA", "JN", "JL"]
-        case "09": year_dates = ["SE", "OC", "NO", "DE", "JA", "FE", "MR", "AP", "MA", "JN", "JL", "AU"]
-        case "10": year_dates = ["OC", "NO", "DE", "JA", "FE", "MR", "AP", "MA", "JN", "JL", "AU", "SE"]
-        case "11": year_dates = ["NO", "DE", "JA", "FE", "MR", "AP", "MA", "JN", "JL", "AU", "SE", "OC"]
-        case "12": year_dates = ["DE", "JA", "FE", "MR", "AP", "MA", "JN", "JL", "AU", "SE", "OC", "NO"]
+        case "01": year_dates = ["JA", "DE", "NO", "OC", "SE", "AU", "SE", "JN", "MA", "AP", "MR", "FE"]
+        case "02": year_dates = ["FE", "JA", "DE", "NO", "OC", "SE", "AU", "SE", "JN", "MA", "AP", "MR"]
+        case "03": year_dates = ["MR", "FE", "JA", "DE", "NO", "OC", "SE", "AU", "SE", "JN", "MA", "AP"]
+        case "04": year_dates = ["AP", "MR", "FE", "JA", "DE", "NO", "OC", "SE", "AU", "SE", "JN", "MA"]
+        case "05": year_dates = ["MA", "AP", "MR", "FE", "JA", "DE", "NO", "OC", "SE", "AU", "SE", "JN"]
+        case "06": year_dates = ["JN", "MA", "AP", "MR", "FE", "JA", "DE", "NO", "OC", "SE", "AU", "SE"]
+        case "07": year_dates = ["JL", "JN", "MA", "AP", "MR", "FE", "JA", "DE", "NO", "OC", "SE", "AU"]
+        case "08": year_dates = ["AU", "JL", "JN", "MA", "AP", "MR", "FE", "JA", "DE", "NO", "OC", "SE"]
+        case "09": year_dates = ["SE", "AU", "JL", "JN", "MA", "AP", "MR", "FE", "JA", "DE", "NO", "OC"]
+        case "10": year_dates = ["OC", "SE", "AU", "JL", "JN", "MA", "AP", "MR", "FE", "JA", "DE", "NO"]
+        case "11": year_dates = ["NO", "OC", "SE", "AU", "JL", "JN", "MA", "AP", "MR", "FE", "JA", "DE"]
+        case "12": year_dates = ["DE", "NO", "OC", "SE", "AU", "JL", "JN", "MA", "AP", "MR", "FE", "JA"]
         default: break
         }
         
-        
         read_user_information(identifier: "0C97A1icrNmm5efNcPNT", completion: { houseDetails, error in
             
+            //WEEK
             for week_date in self.week_dates {
                 self.weekly_history.append(houseDetails?.electricity_history?[week_date])
             }
+            //MONTH
             for month_date in self.month_dates {
                 self.monthly_history.append(houseDetails?.electricity_history?[month_date])
             }
+            //YEAR
             for i in 0...364 {
+                var month_number = (Int(self.month_date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))) ?? 0) - 1
                 
-                var month_number = 0
-                
-                switch self.month_date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24)) {
-                case "1": month_number = 0
-                case "2": month_number = 1
-                case "3": month_number = 2
-                case "4": month_number = 3
-                case "5": month_number = 4
-                case "6": month_number = 5
-                case "7": month_number = 6
-                case "8": month_number = 7
-                case "9": month_number = 8
-                case "10": month_number = 9
-                case "11": month_number = 10
-                case "12": month_number = 11
+                switch self.month_date_formatter.string(from: Date.init()) {
+                case "01": month_number = (Int(self.month_date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))) ?? 9) - 1
+                case "02": month_number = (Int(self.month_date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))) ?? 9) - 2
+                case "03": month_number = (Int(self.month_date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))) ?? 9) - 3
+                case "04": month_number = (Int(self.month_date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))) ?? 9) - 4
+                case "05": month_number = (Int(self.month_date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))) ?? 9) - 5
+                case "06": month_number = (Int(self.month_date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))) ?? 9) - 6
+                case "07": month_number = (Int(self.month_date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))) ?? 9) - 7
+                case "08": month_number = (Int(self.month_date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))) ?? 9) - 8
+                case "09": month_number = (Int(self.month_date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))) ?? 9) - 9
+                case "10": month_number = (Int(self.month_date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))) ?? 9) - 10
+                case "11": month_number = (Int(self.month_date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))) ?? 9) - 11
+                case "12": month_number = (Int(self.month_date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))) ?? 9) - 12
                 default: break
                 }
-                
+                month_number = self.month_number_for_current_result(result: month_number)
                 let date_to_search = date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))
-                //if (Int(self.month_date_formatter.string(from: Date.init())) ?? 14 - 1 == month_number) && (Int(self.day_date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))) ?? 0 >= Int(self.day_date_formatter.string(from: Date.init())) ?? 0) {
-                self.yearly_history[month_number] = Double(houseDetails?.electricity_history?[date_to_search] ?? 0) + self.yearly_history[month_number]
-                //}
+                if !(Int(self.month_date_formatter.string(from: Date.init())) == Int(self.month_date_formatter.string(from: Date.init() - TimeInterval(i * 24 * 3600))) && i > 60) {
+                    self.yearly_history[month_number] += Double(houseDetails?.electricity_history?[date_to_search] ?? 0) //+ self.yearly_history[month_number]
+                }
             }
-            
+            //ALL
             for i in 0...365*10 {
                 let date_to_search = date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))
                 let year_number = (Int(self.year_date_formatter.string(from: Date.init())) ?? 2019) - (Int(self.year_date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))) ?? 1000)
@@ -172,11 +172,9 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
                 }
             }
             
-            self.graph_stack_view.subviews[0].removeFromSuperview()
+            self.reset_graph()
             self.set_graph_to_view(view: "week", data: self.weekly_history)
         })
-        
-        
     }
     
     func reset_graph() {
@@ -192,10 +190,21 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
             if max != 0 {
                 let graphView = ScrollableGraphView(frame: CGRect(x: 0, y: 0, width: graph_stack_view.frame.width, height: graph_stack_view.frame.height), dataSource: self)
                 let linePlot = BarPlot(identifier: type_of_graph)
-                linePlot.barColor = #colorLiteral(red: 0.5882352941, green: 0.737254902, blue: 0.368627451, alpha: 1)
-                linePlot.barLineColor = #colorLiteral(red: 0.02745098039, green: 0.007843137255, blue: 0.1607843137, alpha: 1)
+                linePlot.barColor = UIColor(named: "green-color") ?? UIColor.black
+                linePlot.barLineColor = UIColor(named: "dark-blue-color") ?? UIColor.black
                 let referenceLines = ReferenceLines()
                 graphView.rangeMax = max
+                graphView.rightmostPointPadding = 10
+                graphView.shouldAnimateOnStartup = false
+                if type_of_graph == "month" {
+                    graphView.leftmostPointPadding = 30
+                    graphView.dataPointSpacing = 11
+                    linePlot.barWidth = 8
+                }
+                if type_of_graph == "year" {
+                    graphView.dataPointSpacing = 27
+                    linePlot.barWidth = 20
+                }
                 graphView.addPlot(plot: linePlot)
                 graphView.addReferenceLines(referenceLines: referenceLines)
                 graph_stack_view.addSubview(graphView)
@@ -227,4 +236,34 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
         return max
     }
     
+    func month_number_for_current_result(result: Int) -> Int {
+        switch result {
+        case 0: return 0
+        case 1: return 11
+        case 2: return 10
+        case 3: return 9
+        case 4: return 8
+        case 5: return 7
+        case 6: return 6
+        case 7: return 5
+        case 8: return 4
+        case 9: return 3
+        case 10: return 2
+        case 11: return 1
+        case 12: return 0
+        case -1: return 1
+        case -2: return 2
+        case -3: return 3
+        case -4: return 4
+        case -5: return 5
+        case -6: return 6
+        case -7: return 7
+        case -8: return 8
+        case -9: return 9
+        case -10: return 10
+        case -11: return 11
+        case -12: return 12
+        default: return 0
+        }
+    }
 }

@@ -14,7 +14,7 @@ extension UIButton {
         self.heightAnchor.constraint(greaterThanOrEqualToConstant: 40).isActive = true
         self.layer.cornerRadius = 5
         self.setTitleColor(UIColor.white, for: .normal)
-        self.backgroundColor = #colorLiteral(red: 0.1176470588, green: 0.7647058824, blue: 0.2156862745, alpha: 1) //13, 133, 254
+        self.backgroundColor = UIColor(named: "green-color")
         self.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
 }

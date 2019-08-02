@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,8 +32,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="second" id="acW-dT-cKf">
-                        <color key="badgeColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home_icon" id="acW-dT-cKf">
+                        <color key="badgeColor" name="dark-blue-color"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="scroll_view" destination="dHR-hi-3U8" id="ovB-VI-lnY"/>
@@ -42,7 +43,7 @@
             </objects>
             <point key="canvasLocation" x="694" y="0.0"/>
         </scene>
-        <!--History Electricity ConsumptionVC-->
+        <!--History-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="HistoryElectricityConsumptionVC" customModule="Nudged" customModuleProvider="target" sceneMemberID="viewController">
@@ -105,8 +106,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="cPa-gy-q4n">
-                        <color key="badgeColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                    <tabBarItem key="tabBarItem" title="History" image="history" id="cPa-gy-q4n">
+                        <color key="badgeColor" name="dark-blue-color"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="graph_stack_view" destination="LoF-qJ-ezw" id="qAE-24-MjT"/>
@@ -118,7 +119,7 @@
             </objects>
             <point key="canvasLocation" x="1361" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--Social-->
         <scene sceneID="g0D-XS-Psg">
             <objects>
                 <viewController id="qVY-d0-nge" sceneMemberID="viewController">
@@ -128,8 +129,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CeQ-gK-8Jb"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="vrB-jc-kZ7">
-                        <color key="badgeColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                    <tabBarItem key="tabBarItem" title="Social" image="social_icon" id="vrB-jc-kZ7">
+                        <color key="badgeColor" name="dark-blue-color"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -207,7 +208,7 @@
                                     <segment title="Independent house"/>
                                     <segment title="Semi-detached"/>
                                 </segments>
-                                <color key="tintColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                <color key="tintColor" name="green-color"/>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjN-Ld-t6l">
                                 <rect key="frame" x="107" y="562" width="200" height="40"/>
@@ -291,7 +292,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.58823529409999997" green="0.73725490199999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" red="0.58823529409999997" green="0.73725490199999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" name="dark-blue-color"/>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
@@ -305,6 +306,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="second" width="30" height="30"/>
+        <image name="history" width="25" height="25"/>
+        <image name="home_icon" width="25" height="25"/>
+        <image name="social_icon" width="25" height="25"/>
+        <namedColor name="dark-blue-color">
+            <color red="0.027450980392156862" green="0.0078431372549019607" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="green-color">
+            <color red="0.58823529411764708" green="0.73725490196078436" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

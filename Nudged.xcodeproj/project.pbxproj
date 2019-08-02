@@ -10,11 +10,13 @@
 		08359D6522EB5A2900468B88 /* normal_electric_consumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08359D6422EB5A2900468B88 /* normal_electric_consumption.swift */; };
 		08359D6722EB5A5100468B88 /* HouseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08359D6622EB5A5100468B88 /* HouseType.swift */; };
 		083DEC0722EE065C00488A88 /* String extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DEC0622EE065C00488A88 /* String extension.swift */; };
+		086B1AF322F2E9A8005417C5 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086B1AF222F2E9A8005417C5 /* Colors.xcassets */; };
+		086B1AF622F46574005417C5 /* Amount saved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B1AF522F46574005417C5 /* Amount saved.swift */; };
 		086F551F22E4CA9A0042CFD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086F551E22E4CA9A0042CFD7 /* AppDelegate.swift */; };
 		086F552122E4CA9A0042CFD7 /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086F552022E4CA9A0042CFD7 /* HomeScreenVC.swift */; };
 		086F552322E4CA9A0042CFD7 /* HistoryElectricityConsumptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086F552222E4CA9A0042CFD7 /* HistoryElectricityConsumptionVC.swift */; };
 		086F552622E4CA9A0042CFD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086F552422E4CA9A0042CFD7 /* Main.storyboard */; };
-		086F552822E4CA9B0042CFD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086F552722E4CA9B0042CFD7 /* Assets.xcassets */; };
+		086F552822E4CA9B0042CFD7 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086F552722E4CA9B0042CFD7 /* Icons.xcassets */; };
 		086F552B22E4CA9B0042CFD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086F552922E4CA9B0042CFD7 /* LaunchScreen.storyboard */; };
 		086F553622E4CA9B0042CFD7 /* NudgedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086F553522E4CA9B0042CFD7 /* NudgedTests.swift */; };
 		087843CD22E4CFCF00988CE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 087843CC22E4CFCF00988CE9 /* GoogleService-Info.plist */; };
@@ -47,12 +49,14 @@
 		08359D6422EB5A2900468B88 /* normal_electric_consumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = normal_electric_consumption.swift; sourceTree = "<group>"; };
 		08359D6622EB5A5100468B88 /* HouseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseType.swift; sourceTree = "<group>"; };
 		083DEC0622EE065C00488A88 /* String extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String extension.swift"; sourceTree = "<group>"; };
+		086B1AF222F2E9A8005417C5 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		086B1AF522F46574005417C5 /* Amount saved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Amount saved.swift"; sourceTree = "<group>"; };
 		086F551B22E4CA9A0042CFD7 /* Nudged.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nudged.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		086F551E22E4CA9A0042CFD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		086F552022E4CA9A0042CFD7 /* HomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
 		086F552222E4CA9A0042CFD7 /* HistoryElectricityConsumptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryElectricityConsumptionVC.swift; sourceTree = "<group>"; };
 		086F552522E4CA9A0042CFD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		086F552722E4CA9B0042CFD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		086F552722E4CA9B0042CFD7 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		086F552A22E4CA9B0042CFD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		086F552C22E4CA9B0042CFD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		086F553122E4CA9B0042CFD7 /* NudgedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NudgedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +104,14 @@
 				D2799A5F0D204AB18286AB91 /* Pods-Nudged.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		086B1AF422F46560005417C5 /* Amount saved */ = {
+			isa = PBXGroup;
+			children = (
+				086B1AF522F46574005417C5 /* Amount saved.swift */,
+			);
+			path = "Amount saved";
 			sourceTree = "<group>";
 		};
 		086F551222E4CA9A0042CFD7 = {
@@ -177,7 +189,8 @@
 			children = (
 				086F551E22E4CA9A0042CFD7 /* AppDelegate.swift */,
 				086F552C22E4CA9B0042CFD7 /* Info.plist */,
-				086F552722E4CA9B0042CFD7 /* Assets.xcassets */,
+				086F552722E4CA9B0042CFD7 /* Icons.xcassets */,
+				086B1AF222F2E9A8005417C5 /* Colors.xcassets */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -195,6 +208,7 @@
 		08FC91DD22EB5AF8002DABBF /* Algorithms */ = {
 			isa = PBXGroup;
 			children = (
+				086B1AF422F46560005417C5 /* Amount saved */,
 				08C340B422E7727C008D9ED6 /* Comparison to other houses */,
 			);
 			path = Algorithms;
@@ -329,9 +343,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				086B1AF322F2E9A8005417C5 /* Colors.xcassets in Resources */,
 				086F552B22E4CA9B0042CFD7 /* LaunchScreen.storyboard in Resources */,
 				087843CD22E4CFCF00988CE9 /* GoogleService-Info.plist in Resources */,
-				086F552822E4CA9B0042CFD7 /* Assets.xcassets in Resources */,
+				086F552822E4CA9B0042CFD7 /* Icons.xcassets in Resources */,
 				086F552622E4CA9A0042CFD7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +412,7 @@
 				086F552322E4CA9A0042CFD7 /* HistoryElectricityConsumptionVC.swift in Sources */,
 				086F551F22E4CA9A0042CFD7 /* AppDelegate.swift in Sources */,
 				08FC91E222EB5C74002DABBF /* StartupVC.swift in Sources */,
+				086B1AF622F46574005417C5 /* Amount saved.swift in Sources */,
 				08C340BA22E77500008D9ED6 /* compare_house_consumption_to_houses_with_same_postal_code.swift in Sources */,
 				087843D522E4D23800988CE9 /* HouseDetails.swift in Sources */,
 				08359D6722EB5A5100468B88 /* HouseType.swift in Sources */,
