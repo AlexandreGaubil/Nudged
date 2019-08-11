@@ -29,13 +29,13 @@ func normal_electric_consumption(house_type: HouseType, house_surface: Double, n
     }
     
     //Lights + heating + cooling
-    let size_dependant_usage = 0.52 * (medium_use_of_electricity_of_neighbourhood / medium_house_size_of_neighbourhood) * house_surface
+    let size_dependant_usage = global_parameters.electricity_size_dependant_usage * (medium_use_of_electricity_of_neighbourhood / medium_house_size_of_neighbourhood) * house_surface
     
     //Fridge + TV
-    let fixed_usage = 0.08 * medium_use_of_electricity_of_neighbourhood
+    let fixed_usage = global_parameters.electricity_fixed_usage * medium_use_of_electricity_of_neighbourhood
     
     //Water Heating + Computer and tech charging
-    let number_of_inhabitants_dependant_usage = 0.4 * (medium_use_of_electricity_of_neighbourhood / medium_house_size_of_neighbourhood) * Double(number_of_house_inhabitants)
+    let number_of_inhabitants_dependant_usage = global_parameters.electricity_number_of_inhabitants_dependant_usage * (medium_use_of_electricity_of_neighbourhood / medium_house_size_of_neighbourhood) * Double(number_of_house_inhabitants)
     
     
     return size_dependant_usage + fixed_usage + number_of_inhabitants_dependant_usage

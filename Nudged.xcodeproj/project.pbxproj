@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0819D1BD2300CCE900C91B5C /* Global parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819D1BC2300CCE900C91B5C /* Global parameters.swift */; };
 		08359D6522EB5A2900468B88 /* normal_electric_consumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08359D6422EB5A2900468B88 /* normal_electric_consumption.swift */; };
 		08359D6722EB5A5100468B88 /* HouseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08359D6622EB5A5100468B88 /* HouseType.swift */; };
 		083DEC0722EE065C00488A88 /* String extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DEC0622EE065C00488A88 /* String extension.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0819D1BC2300CCE900C91B5C /* Global parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Global parameters.swift"; sourceTree = "<group>"; };
 		08359D6422EB5A2900468B88 /* normal_electric_consumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = normal_electric_consumption.swift; sourceTree = "<group>"; };
 		08359D6622EB5A5100468B88 /* HouseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseType.swift; sourceTree = "<group>"; };
 		083DEC0622EE065C00488A88 /* String extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String extension.swift"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			children = (
 				086B1AF422F46560005417C5 /* Amount saved */,
 				08C340B422E7727C008D9ED6 /* Comparison to other houses */,
+				0819D1BC2300CCE900C91B5C /* Global parameters.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				086B1AF622F46574005417C5 /* Amount saved.swift in Sources */,
 				08C340BA22E77500008D9ED6 /* compare_house_consumption_to_houses_with_same_postal_code.swift in Sources */,
 				087843D522E4D23800988CE9 /* HouseDetails.swift in Sources */,
+				0819D1BD2300CCE900C91B5C /* Global parameters.swift in Sources */,
 				08359D6722EB5A5100468B88 /* HouseType.swift in Sources */,
 				087843D122E4D14F00988CE9 /* read_user_information.swift in Sources */,
 				08FC91EA22EB6EB6002DABBF /* create_alert_view.swift in Sources */,
