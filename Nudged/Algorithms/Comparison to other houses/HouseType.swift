@@ -15,10 +15,11 @@ enum HouseType {
 }
 
 struct NormalHouseInNeighborhood {
-    var apartment_electricity_use = 0.0
-    var separate_house_electricity_use = 0.0
-    var house_sharing_walls_electricity_use = 0.0
-    var apartment_size = 0.0
-    var separate_house_size = 0.0
-    var house_sharing_walls_size = 0.0
+    var apartment_electricity_use: Double
+    var separate_house_electricity_use: Double
+    var house_sharing_walls_electricity_use: Double
+    var apartment_size: Double
+    var separate_house_size: Double
+    var house_sharing_walls_size: Double
+    var medium_number_of_inhabitants: Double
 }

@@ -12,6 +12,7 @@ func normal_electric_consumption(house_type: HouseType, house_surface: Double, n
     
     var medium_use_of_electricity_of_neighbourhood = 0.0
     var medium_house_size_of_neighbourhood = 0.0
+    var medium_number_of_inhabitants = 0
     
     switch house_type {
     case .apartment:
@@ -28,6 +29,13 @@ func normal_electric_consumption(house_type: HouseType, house_surface: Double, n
         
     }
     
+    if medium_house_size_of_neighbourhood == 0 {
+        medium_house_size_of_neighbourhood = 1
+    }
+    if medium_number_of_inhabitants == 0 {
+        medium_number_of_inhabitants = 1
+    }
+    
     //Lights + heating + cooling
     let size_dependant_usage = global_parameters.electricity_size_dependant_usage * (medium_use_of_electricity_of_neighbourhood / medium_house_size_of_neighbourhood) * house_surface
     
@@ -35,8 +43,11 @@ func normal_electric_consumption(house_type: HouseType, house_surface: Double, n
     let fixed_usage = global_parameters.electricity_fixed_usage * medium_use_of_electricity_of_neighbourhood
     
     //Water Heating + Computer and tech charging
-    let number_of_inhabitants_dependant_usage = global_parameters.electricity_number_of_inhabitants_dependant_usage * (medium_use_of_electricity_of_neighbourhood / medium_house_size_of_neighbourhood) * Double(number_of_house_inhabitants)
+    let number_of_inhabitants_dependant_usage = global_parameters.electricity_number_of_inhabitants_dependant_usage * (medium_use_of_electricity_of_neighbourhood / Double(medium_number_of_inhabitants)) * Double(number_of_house_inhabitants)
     
+    print("Size: \(size_dependant_usage)")
+    print("Fixed \(fixed_usage)")
+    print("Inhabitants: \(number_of_inhabitants_dependant_usage)")
     
     return size_dependant_usage + fixed_usage + number_of_inhabitants_dependant_usage
 }

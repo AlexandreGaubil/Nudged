@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0819D1BD2300CCE900C91B5C /* Global parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819D1BC2300CCE900C91B5C /* Global parameters.swift */; };
+		0819D1BF2301D87200C91B5C /* setup_data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819D1BE2301D87200C91B5C /* setup_data.swift */; };
+		0819D1C12301D9A700C91B5C /* History object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819D1C02301D9A700C91B5C /* History object.swift */; };
 		08359D6522EB5A2900468B88 /* normal_electric_consumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08359D6422EB5A2900468B88 /* normal_electric_consumption.swift */; };
 		08359D6722EB5A5100468B88 /* HouseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08359D6622EB5A5100468B88 /* HouseType.swift */; };
 		083DEC0722EE065C00488A88 /* String extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DEC0622EE065C00488A88 /* String extension.swift */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		0819D1BC2300CCE900C91B5C /* Global parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Global parameters.swift"; sourceTree = "<group>"; };
+		0819D1BE2301D87200C91B5C /* setup_data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setup_data.swift; sourceTree = "<group>"; };
+		0819D1C02301D9A700C91B5C /* History object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History object.swift"; sourceTree = "<group>"; };
 		08359D6422EB5A2900468B88 /* normal_electric_consumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = normal_electric_consumption.swift; sourceTree = "<group>"; };
 		08359D6622EB5A5100468B88 /* HouseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseType.swift; sourceTree = "<group>"; };
 		083DEC0622EE065C00488A88 /* String extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String extension.swift"; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 		08FC91DE22EB5B14002DABBF /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				0819D1BE2301D87200C91B5C /* setup_data.swift */,
+				0819D1C02301D9A700C91B5C /* History object.swift */,
 				087843CF22E4D13500988CE9 /* Firestore */,
 				087843D322E4D21700988CE9 /* Database objects */,
 				08FC91E522EB6615002DABBF /* UserDefaults keys.swift */,
@@ -412,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08359D6522EB5A2900468B88 /* normal_electric_consumption.swift in Sources */,
+				0819D1BF2301D87200C91B5C /* setup_data.swift in Sources */,
 				086F552322E4CA9A0042CFD7 /* HistoryElectricityConsumptionVC.swift in Sources */,
 				086F551F22E4CA9A0042CFD7 /* AppDelegate.swift in Sources */,
 				08FC91E222EB5C74002DABBF /* StartupVC.swift in Sources */,
@@ -420,6 +427,7 @@
 				087843D522E4D23800988CE9 /* HouseDetails.swift in Sources */,
 				0819D1BD2300CCE900C91B5C /* Global parameters.swift in Sources */,
 				08359D6722EB5A5100468B88 /* HouseType.swift in Sources */,
+				0819D1C12301D9A700C91B5C /* History object.swift in Sources */,
 				087843D122E4D14F00988CE9 /* read_user_information.swift in Sources */,
 				08FC91EA22EB6EB6002DABBF /* create_alert_view.swift in Sources */,
 				08FC91E422EB60FE002DABBF /* make_button_inverted.swift in Sources */,

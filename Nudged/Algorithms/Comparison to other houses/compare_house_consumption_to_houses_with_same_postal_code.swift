@@ -11,7 +11,11 @@ import FirebaseFirestore
 
 func compare_house_consumption_to_houses_with_same_postal_code() -> Int {
     
-    //normal_electric_consumption(house_type: <#T##HouseType#>, house_surface: <#T##Double#>, number_of_house_inhabitants: <#T##Int#>, normal_house_in_neighborhood: <#T##NormalHouseInNeighborhood#>)
-    
-    return 9
+    let normal_consumption = normal_electric_consumption(house_type: user_house?.kind_of_house ?? HouseType.apartment, house_surface: user_house?.size_of_house ?? 0, number_of_house_inhabitants: user_house?.number_of_inhabitants ?? 0, normal_house_in_neighborhood: normal_house_one)
+    print((100 * global_history.electricity_usage) / normal_consumption)
+    if !(normal_consumption.isNaN) {
+        return Int(100 * global_history.electricity_usage / normal_consumption)
+    } else {
+        return 0
+    }
 }
