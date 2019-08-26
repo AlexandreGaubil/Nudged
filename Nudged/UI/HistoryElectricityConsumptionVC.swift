@@ -14,6 +14,7 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
     
     func value(forPlot plot: Plot, atIndex pointIndex: Int) -> Double {
         switch(plot.identifier) {
+        case "day": return daily_history[pointIndex] ?? 0.0
         case "week": return weekly_history[pointIndex] ?? 0.0
         case "month": return monthly_history[pointIndex] ?? 0.0
         case "year": return yearly_history[pointIndex]
@@ -24,6 +25,11 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
     
     func label(atIndex pointIndex: Int) -> String {
         switch type_of_graph {
+        case "day":
+            switch pointIndex {
+            case 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24: return String(pointIndex)
+            default: return ""
+            }
         case "week": return (week_dates[pointIndex]).substring(toIndex: 2)
         case "month": return "" //return (month_dates[pointIndex]).substring(toIndex: 2)
         case "year": return year_dates[pointIndex]
@@ -34,6 +40,7 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
     
     func numberOfPoints() -> Int {
         switch type_of_graph {
+        case "day": return 48
         case "week": return weekly_history.count
         case "month": return monthly_history.count
         case "year": return yearly_history.count
@@ -42,6 +49,7 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
         }
     }
     
+    var daily_history: [Double?] = []
     var weekly_history: [Double?] = []
     var monthly_history: [Double?] = []
     var yearly_history: [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -211,14 +219,14 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
             } else {
                 let no_data_view = UILabel(frame: CGRect(x: 0, y: 0, width: graph_stack_view.frame.width, height: graph_stack_view.frame.height))
                 no_data_view.textAlignment = .center
-                no_data_view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+                no_data_view.backgroundColor = #colorLiteral(red: 0.5882352941, green: 0.737254902, blue: 0.368627451, alpha: 1)
                 no_data_view.text = "There is no data to display for this period"
                 graph_stack_view.addSubview(no_data_view)
             }
         } else {
             let error_view = UILabel(frame: CGRect(x: 0, y: 0, width: graph_stack_view.frame.width, height: graph_stack_view.frame.height))
             error_view.textAlignment = .center
-            error_view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            error_view.backgroundColor = #colorLiteral(red: 0.5882352941, green: 0.737254902, blue: 0.368627451, alpha: 1)
             error_view.text = "Error loading data"
             graph_stack_view.addSubview(error_view)
         }

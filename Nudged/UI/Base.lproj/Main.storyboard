@@ -119,20 +119,42 @@
             </objects>
             <point key="canvasLocation" x="1361" y="0.0"/>
         </scene>
-        <!--Social-->
+        <!--Achievements-->
         <scene sceneID="g0D-XS-Psg">
             <objects>
-                <viewController id="qVY-d0-nge" sceneMemberID="viewController">
+                <viewController id="qVY-d0-nge" customClass="SocialVC" customModule="Nudged" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g8f-hr-N2O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Achievements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKF-ge-fSo">
+                                <rect key="frame" x="40" y="64" width="183.5" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBg-dx-yyp">
+                                <rect key="frame" x="20" y="130" width="374" height="683"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bKF-ge-fSo" firstAttribute="leading" secondItem="CeQ-gK-8Jb" secondAttribute="leading" constant="40" id="0nv-BY-aMF"/>
+                            <constraint firstItem="bKF-ge-fSo" firstAttribute="top" secondItem="CeQ-gK-8Jb" secondAttribute="top" constant="20" id="3Ex-RS-wXI"/>
+                            <constraint firstItem="OBg-dx-yyp" firstAttribute="top" secondItem="bKF-ge-fSo" secondAttribute="bottom" constant="30" id="JqR-IO-7gV"/>
+                            <constraint firstItem="CeQ-gK-8Jb" firstAttribute="trailing" secondItem="OBg-dx-yyp" secondAttribute="trailing" constant="20" id="cyZ-pY-Nv2"/>
+                            <constraint firstItem="OBg-dx-yyp" firstAttribute="leading" secondItem="CeQ-gK-8Jb" secondAttribute="leading" constant="20" id="d2h-5R-bHp"/>
+                            <constraint firstItem="CeQ-gK-8Jb" firstAttribute="bottom" secondItem="OBg-dx-yyp" secondAttribute="bottom" id="wlR-vd-4ja"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CeQ-gK-8Jb"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Social" image="social_icon" id="vrB-jc-kZ7">
-                        <color key="badgeColor" name="dark-blue-color"/>
+                    <tabBarItem key="tabBarItem" title="Achievements" image="social_icon" id="vrB-jc-kZ7">
+                        <color key="badgeColor" name="green-color"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="scroll_view" destination="OBg-dx-yyp" id="iWA-Vc-Imi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEJ-v3-EG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

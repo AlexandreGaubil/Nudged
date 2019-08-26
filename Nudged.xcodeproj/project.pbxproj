@@ -10,6 +10,8 @@
 		0819D1BD2300CCE900C91B5C /* Global parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819D1BC2300CCE900C91B5C /* Global parameters.swift */; };
 		0819D1BF2301D87200C91B5C /* setup_data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819D1BE2301D87200C91B5C /* setup_data.swift */; };
 		0819D1C12301D9A700C91B5C /* History object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819D1C02301D9A700C91B5C /* History object.swift */; };
+		0819D1F4230ABB9A00C91B5C /* SocialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819D1F3230ABB9A00C91B5C /* SocialVC.swift */; };
+		0819D1F7230B140600C91B5C /* Kinds of Achievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819D1F6230B140600C91B5C /* Kinds of Achievements.swift */; };
 		08359D6522EB5A2900468B88 /* normal_electric_consumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08359D6422EB5A2900468B88 /* normal_electric_consumption.swift */; };
 		08359D6722EB5A5100468B88 /* HouseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08359D6622EB5A5100468B88 /* HouseType.swift */; };
 		083DEC0722EE065C00488A88 /* String extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083DEC0622EE065C00488A88 /* String extension.swift */; };
@@ -22,6 +24,7 @@
 		086F552822E4CA9B0042CFD7 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086F552722E4CA9B0042CFD7 /* Icons.xcassets */; };
 		086F552B22E4CA9B0042CFD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086F552922E4CA9B0042CFD7 /* LaunchScreen.storyboard */; };
 		086F553622E4CA9B0042CFD7 /* NudgedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086F553522E4CA9B0042CFD7 /* NudgedTests.swift */; };
+		0874D33C2313DDC400533D22 /* polar_bears.png in Resources */ = {isa = PBXBuildFile; fileRef = 0874D33B2313DDC400533D22 /* polar_bears.png */; };
 		087843CD22E4CFCF00988CE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 087843CC22E4CFCF00988CE9 /* GoogleService-Info.plist */; };
 		087843CE22E4CFCF00988CE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 087843CC22E4CFCF00988CE9 /* GoogleService-Info.plist */; };
 		087843D122E4D14F00988CE9 /* read_user_information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087843D022E4D14F00988CE9 /* read_user_information.swift */; };
@@ -52,6 +55,8 @@
 		0819D1BC2300CCE900C91B5C /* Global parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Global parameters.swift"; sourceTree = "<group>"; };
 		0819D1BE2301D87200C91B5C /* setup_data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setup_data.swift; sourceTree = "<group>"; };
 		0819D1C02301D9A700C91B5C /* History object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History object.swift"; sourceTree = "<group>"; };
+		0819D1F3230ABB9A00C91B5C /* SocialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialVC.swift; sourceTree = "<group>"; };
+		0819D1F6230B140600C91B5C /* Kinds of Achievements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kinds of Achievements.swift"; sourceTree = "<group>"; };
 		08359D6422EB5A2900468B88 /* normal_electric_consumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = normal_electric_consumption.swift; sourceTree = "<group>"; };
 		08359D6622EB5A5100468B88 /* HouseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseType.swift; sourceTree = "<group>"; };
 		083DEC0622EE065C00488A88 /* String extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String extension.swift"; sourceTree = "<group>"; };
@@ -68,6 +73,7 @@
 		086F553122E4CA9B0042CFD7 /* NudgedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NudgedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		086F553522E4CA9B0042CFD7 /* NudgedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NudgedTests.swift; sourceTree = "<group>"; };
 		086F553722E4CA9B0042CFD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0874D33B2313DDC400533D22 /* polar_bears.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = polar_bears.png; sourceTree = "<group>"; };
 		087843CC22E4CFCF00988CE9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		087843D022E4D14F00988CE9 /* read_user_information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = read_user_information.swift; sourceTree = "<group>"; };
 		087843D422E4D23800988CE9 /* HouseDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetails.swift; sourceTree = "<group>"; };
@@ -110,6 +116,15 @@
 				D2799A5F0D204AB18286AB91 /* Pods-Nudged.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		0819D1F5230B13E900C91B5C /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				0819D1F3230ABB9A00C91B5C /* SocialVC.swift */,
+				0819D1F6230B140600C91B5C /* Kinds of Achievements.swift */,
+			);
+			path = Social;
 			sourceTree = "<group>";
 		};
 		086B1AF422F46560005417C5 /* Amount saved */ = {
@@ -160,6 +175,14 @@
 			path = NudgedTests;
 			sourceTree = "<group>";
 		};
+		0874D33D2313E00C00533D22 /* badges */ = {
+			isa = PBXGroup;
+			children = (
+				0874D33B2313DDC400533D22 /* polar_bears.png */,
+			);
+			path = badges;
+			sourceTree = "<group>";
+		};
 		087843CF22E4D13500988CE9 /* Firestore */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,8 +206,9 @@
 				086F552922E4CA9B0042CFD7 /* LaunchScreen.storyboard */,
 				086F552422E4CA9A0042CFD7 /* Main.storyboard */,
 				08FC91E122EB5C74002DABBF /* StartupVC.swift */,
-				08FC91DF22EB5B3C002DABBF /* Home Screen */,
-				08FC91E022EB5BB2002DABBF /* History */,
+				086F552022E4CA9A0042CFD7 /* HomeScreenVC.swift */,
+				086F552222E4CA9A0042CFD7 /* HistoryElectricityConsumptionVC.swift */,
+				0819D1F5230B13E900C91B5C /* Social */,
 				08FC91EB22ED9C01002DABBF /* Support */,
 			);
 			path = UI;
@@ -193,6 +217,7 @@
 		087843DA22E4D40200988CE9 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				0874D33D2313E00C00533D22 /* badges */,
 				086F551E22E4CA9A0042CFD7 /* AppDelegate.swift */,
 				086F552C22E4CA9B0042CFD7 /* Info.plist */,
 				086F552722E4CA9B0042CFD7 /* Icons.xcassets */,
@@ -231,22 +256,6 @@
 				08FC91E522EB6615002DABBF /* UserDefaults keys.swift */,
 			);
 			path = Database;
-			sourceTree = "<group>";
-		};
-		08FC91DF22EB5B3C002DABBF /* Home Screen */ = {
-			isa = PBXGroup;
-			children = (
-				086F552022E4CA9A0042CFD7 /* HomeScreenVC.swift */,
-			);
-			path = "Home Screen";
-			sourceTree = "<group>";
-		};
-		08FC91E022EB5BB2002DABBF /* History */ = {
-			isa = PBXGroup;
-			children = (
-				086F552222E4CA9A0042CFD7 /* HistoryElectricityConsumptionVC.swift */,
-			);
-			path = History;
 			sourceTree = "<group>";
 		};
 		08FC91EB22ED9C01002DABBF /* Support */ = {
@@ -356,6 +365,7 @@
 				086F552B22E4CA9B0042CFD7 /* LaunchScreen.storyboard in Resources */,
 				087843CD22E4CFCF00988CE9 /* GoogleService-Info.plist in Resources */,
 				086F552822E4CA9B0042CFD7 /* Icons.xcassets in Resources */,
+				0874D33C2313DDC400533D22 /* polar_bears.png in Resources */,
 				086F552622E4CA9A0042CFD7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +436,8 @@
 				08C340BA22E77500008D9ED6 /* compare_house_consumption_to_houses_with_same_postal_code.swift in Sources */,
 				087843D522E4D23800988CE9 /* HouseDetails.swift in Sources */,
 				0819D1BD2300CCE900C91B5C /* Global parameters.swift in Sources */,
+				0819D1F4230ABB9A00C91B5C /* SocialVC.swift in Sources */,
+				0819D1F7230B140600C91B5C /* Kinds of Achievements.swift in Sources */,
 				08359D6722EB5A5100468B88 /* HouseType.swift in Sources */,
 				0819D1C12301D9A700C91B5C /* History object.swift in Sources */,
 				087843D122E4D14F00988CE9 /* read_user_information.swift in Sources */,

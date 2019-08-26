@@ -27,7 +27,6 @@ class HomeScreenVC: UIViewController {
         }
         
         
-        
         //MARK: Comparison wheel
         let comparison_view = UIView()
         comparison_view.frame.size.height = 300
@@ -44,36 +43,62 @@ class HomeScreenVC: UIViewController {
         comparison_view.addSubview(percentile_label)
         
         let percentile_info_label = UILabel(frame: CGRect(x: 20, y: 100, width: 260, height: 40))
-        percentile_info_label.text = "of people have a worst electric consumption than you"
         percentile_info_label.font = UIFont.preferredFont(forTextStyle: .caption1)
         percentile_info_label.textAlignment = .center
         percentile_info_label.numberOfLines = 0
-        comparison_view.addSubview(percentile_info_label)
         
         let amount_saved_label = UILabel(frame: CGRect(x: 50, y: 140, width: 200, height: 50))
         amount_saved_label.font = UIFont.preferredFont(forTextStyle: .title1)
         amount_saved_label.textAlignment = .center
         
         let amount_saved_info_label = UILabel(frame: CGRect(x: 20, y: 190, width: 260, height: 40))
-        amount_saved_info_label.text = "amount you can save this month on electric bills"
         amount_saved_info_label.font = UIFont.preferredFont(forTextStyle: .caption1)
         amount_saved_info_label.textAlignment = .center
         amount_saved_info_label.numberOfLines = 0
-        comparison_view.addSubview(amount_saved_info_label)
         
         view.addSubview(comparison_view)
         
         read_user_information(identifier: "0C97A1icrNmm5efNcPNT", completion: { houseDetails, error in
             user_house = UserHouse(number_of_inhabitants: houseDetails?.number_of_house_inhabitants ?? 0, size_of_house: houseDetails?.house_size ?? 0.0 , kind_of_house: houseDetails?.kind_of_house ?? HouseType.apartment)
-            percentile_label.text = String(describing: compare_house_consumption_to_houses_with_same_postal_code()) + " %"
-            amount_saved_label.text = String(describing: amount_saved()) + " $"
+            
+            let result = compare_house_consumption_to_houses_with_same_postal_code()
+            switch result.1 {
+            case .better_than_normal:
+                comparison_view.layer.borderColor = UIColor( #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)).cgColor
+                percentile_label.text = String(result.0) + "%"
+                percentile_info_label.text = "You use " + String(result.0) + "% less electricity than your neighbors"
+            case .worse_than_normal:
+                if result.0 < 50 {
+                    comparison_view.layer.borderColor = UIColor( #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)).cgColor //UIColor(named: "orange-color")?.cgColor
+                } else {
+                    comparison_view.layer.borderColor = UIColor( #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)).cgColor //UIColor(named: "red-color")?.cgColor
+                }
+                percentile_label.text = String(result.0) + "%"
+                percentile_info_label.text = "You use " + String(result.0) + "% more electricity than your neighbors"
+            case .equal_to_normal:
+                comparison_view.layer.borderColor = UIColor( #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)).cgColor //UIColor(named: "yellow-color")?.cgColor
+                percentile_label.text = String(result.0) + "%"
+                percentile_info_label.text = "You use the same amount of electricity than your neighbors"
+            }
+            
+            let result_amount_saved = amount_saved()
+            switch result_amount_saved.1 {
+            case .better_than_normal:
+                amount_saved_label.text = String(result_amount_saved.0) + " $"
+                amount_saved_info_label.text = "You can save " + String(result_amount_saved.0) + " $ these next 30 days on electricity bills"
+            case .worse_than_normal:
+                amount_saved_label.text = String(result_amount_saved.0) + "$"
+                amount_saved_info_label.text = "You have saved " + String(result_amount_saved.0) + "$ these past 30 days on electricity bills"
+            case .equal_to_normal: break
+            }
+            
             comparison_view.addSubview(amount_saved_label)
             comparison_view.addSubview(percentile_label)
-            
+            comparison_view.addSubview(percentile_info_label)
+            comparison_view.addSubview(amount_saved_info_label)
         })
         
         //MARK: Tips section
-        //scroll_view.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
         let demarcation_view = UIView(frame: CGRect(x: 50, y: 380, width: UIScreen.main.bounds.width - 100, height: 1))
         demarcation_view.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         view.addSubview(demarcation_view)
@@ -84,24 +109,30 @@ class HomeScreenVC: UIViewController {
         scroll_view.addSubview(tip_label_title)
         scroll_view.contentSize.height = 50
         
-        scroll_view.addSubview(create_new_tip(title: "Unplug unused appliances", subtitle: "Unused appliances, even turned off, consume power while plugged in.", url: "www.apple.com"))
-        scroll_view.addSubview(create_new_tip(title: "Unplug two appliances", subtitle: "Unused appliances, even turned off, consume power while plugged in.", url: "www.apple.com"))
-        scroll_view.addSubview(create_new_tip(title: " 😅", subtitle: "Unused appliances, even turned off, consume power while plugged in.", url: "www.apple.com"))
-        scroll_view.addSubview(create_new_tip(title: "Unplug unused appliances", subtitle: "Unused appliances, even turned off, consume power while plugged in.", url: "www.apple.com"))
-        scroll_view.addSubview(create_new_tip(title: "Unplug two appliances", subtitle: "Unused appliances, even turned off, consume power while plugged in.", url: "www.apple.com"))
-        scroll_view.addSubview(create_new_tip(title: " 😅", subtitle: "Unused appliances, even turned off, consume power while plugged in.", url: "www.apple.com"))
+        create_new_tip(title: "10 Ways to Reduce Your Home’s Power Use", subtitle: "These 10 great tips will help you to reduce your household's electricity consumption!", url: "www.angieslist.com/articles/10-ways-reduce-your-home-s-power-use.htm")
+        
+        create_new_tip(title: "What Uses the Most Energy in Your Home?", subtitle: "", url: "www.visualcapitalist.com/what-uses-the-most-energy-home/")
+        
+        create_new_tip(title: "What Are the Effects of Overusing Energy?", subtitle: "The effects of living beyond our means", url: "homeguides.sfgate.com/effects-overusing-energy-78753.html")
+        
+        create_new_tip(title: "The Big Thaw", subtitle: "Ice caps melting at an alarming rate!", url: "www.nationalgeographic.com/environment/global-warming/big-thaw/")
+        
+        create_new_tip(title: "Unplug two appliances", subtitle: "", url: "www.apple.com")
+        
+        create_new_tip(title: " 😅", subtitle: "", url: "www.apple.com")
         
         scroll_view.contentSize.height += 10
     }
     
-    private func create_new_tip(title: String, subtitle: String, url: String) -> UIView {
+    private func create_new_tip(title: String, subtitle: String, url: String) {
         let tip_view = UIView(frame: CGRect(x: 20, y: scroll_view.contentSize.height + 6, width: UIScreen.main.bounds.width - 40, height: 100))
         scroll_view.contentSize.height += 106
-        tip_view.backgroundColor = #colorLiteral(red: 0.93152982, green: 0.93152982, blue: 0.93152982, alpha: 1)
+        tip_view.backgroundColor = UIColor(named: "purple-color") ?? UIColor.lightGray
         
         let title_label = UILabel(frame: CGRect(x: 5, y: 0, width: UIScreen.main.bounds.width - 50, height: 30))
         title_label.text = title
         tip_view.addSubview(title_label)
+        title_label.numberOfLines = 0
         title_label.font = UIFont.preferredFont(forTextStyle: .title2)
         
         let subtitle_label = UILabel(frame: CGRect(x: 5, y: 30, width: UIScreen.main.bounds.width - 50, height: 70))
@@ -109,6 +140,6 @@ class HomeScreenVC: UIViewController {
         tip_view.addSubview(subtitle_label)
         subtitle_label.numberOfLines = 0
         
-        return tip_view
+        scroll_view.addSubview(tip_view)
     }
 }
