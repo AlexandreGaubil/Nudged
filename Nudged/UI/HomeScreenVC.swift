@@ -11,9 +11,21 @@ import UIKit
 class HomeScreenVC: UIViewController {
 
     @IBOutlet weak var scroll_view: UIScrollView!
+    var urls_to_open: [String] = []
+    var current_tag = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let colorTop =  #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1).cgColor
+        let colorBottom = #colorLiteral(red: 0.004859850742, green: 0.09608627111, blue: 0.5749928951, alpha: 1).cgColor
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colorTop, colorBottom]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.frame = self.view.bounds
+        
+        self.view.layer.insertSublayer(gradientLayer, at:0)
         
         //MARK: Present first time screen
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -40,21 +52,25 @@ class HomeScreenVC: UIViewController {
         let percentile_label = UILabel(frame: CGRect(x: 100, y: 50, width: 100, height: 50))
         percentile_label.font = UIFont.preferredFont(forTextStyle: .title1)
         percentile_label.textAlignment = .center
+        percentile_label.textColor = .white
         comparison_view.addSubview(percentile_label)
         
         let percentile_info_label = UILabel(frame: CGRect(x: 20, y: 100, width: 260, height: 40))
         percentile_info_label.font = UIFont.preferredFont(forTextStyle: .caption1)
         percentile_info_label.textAlignment = .center
         percentile_info_label.numberOfLines = 0
+        percentile_info_label.textColor = .white
         
         let amount_saved_label = UILabel(frame: CGRect(x: 50, y: 140, width: 200, height: 50))
         amount_saved_label.font = UIFont.preferredFont(forTextStyle: .title1)
         amount_saved_label.textAlignment = .center
+        amount_saved_label.textColor = .white
         
         let amount_saved_info_label = UILabel(frame: CGRect(x: 20, y: 190, width: 260, height: 40))
         amount_saved_info_label.font = UIFont.preferredFont(forTextStyle: .caption1)
         amount_saved_info_label.textAlignment = .center
         amount_saved_info_label.numberOfLines = 0
+        amount_saved_info_label.textColor = .white
         
         view.addSubview(comparison_view)
         
@@ -106,6 +122,7 @@ class HomeScreenVC: UIViewController {
         let tip_label_title = UILabel(frame: CGRect(x: (UIScreen.main.bounds.width - 50) / 2, y: 10, width: 100, height: 30))
         tip_label_title.text = "Tips"
         tip_label_title.font = UIFont.preferredFont(forTextStyle: .title1)
+        tip_label_title.textColor = .white
         scroll_view.addSubview(tip_label_title)
         scroll_view.contentSize.height = 50
         
@@ -127,7 +144,8 @@ class HomeScreenVC: UIViewController {
     private func create_new_tip(title: String, subtitle: String, url: String) {
         let tip_view = UIView(frame: CGRect(x: 20, y: scroll_view.contentSize.height + 6, width: UIScreen.main.bounds.width - 40, height: 100))
         scroll_view.contentSize.height += 106
-        tip_view.backgroundColor = UIColor(named: "purple-color") ?? UIColor.lightGray
+        tip_view.backgroundColor = UIColor(named: "blue-color") ?? UIColor.lightGray
+        tip_view.layer.cornerRadius = 15
         
         let title_label = UILabel(frame: CGRect(x: 5, y: 0, width: UIScreen.main.bounds.width - 50, height: 30))
         title_label.text = title
@@ -140,6 +158,23 @@ class HomeScreenVC: UIViewController {
         tip_view.addSubview(subtitle_label)
         subtitle_label.numberOfLines = 0
         
+        let gesture_recogniser = UIGestureRecognizer(target: self, action: #selector(self.open_article(sender:)))
+        title_label.addGestureRecognizer(gesture_recogniser)
+        subtitle_label.addGestureRecognizer(gesture_recogniser)
+        title_label.isUserInteractionEnabled = true
+        subtitle_label.isUserInteractionEnabled = true
+        
+        urls_to_open.append(url)
+        title_label.tag = urls_to_open.count - 1
+        subtitle_label.tag = urls_to_open.count - 1
+        
         scroll_view.addSubview(tip_view)
+    }
+    
+    @objc func open_article(sender: UIView) {
+        print("Sender tag: \(sender.tag): \(urls_to_open[sender.tag])")
+        if let url = URL(string: urls_to_open[sender.tag]) {
+            UIApplication.shared.open(url)
+        }
     }
 }

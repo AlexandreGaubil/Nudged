@@ -11,22 +11,23 @@ import Foundation
 func setup_data(completion: @escaping (Bool, Error?) -> Void) {
     
     let date_formatter = DateFormatter()
-    date_formatter.dateFormat = "dd_MM_yyyy"
+    date_formatter.dateFormat = "yyyy_MM_dd HH:mm"
     let month_date_formatter = DateFormatter()
     month_date_formatter.dateFormat = "MM"
     let year_date_formatter = DateFormatter()
     year_date_formatter.dateFormat = "yyyy"
     
+    let corrected_current_date_double_value: Double = Double(Date().timeIntervalSinceReferenceDate) - Double(Date().timeIntervalSinceReferenceDate).truncatingRemainder(dividingBy: 1800)
+    
     for i in 0...100 {
         global_history.all_dates.append(String((Int(year_date_formatter.string(from: Date.init())) ?? 2019) - i))
     }
-    
-    for i in [0, 24, 48, 72, 96, 120, 144] {
-        let date = Date.init(timeIntervalSinceReferenceDate: TimeInterval(exactly: Double(Date.init().timeIntervalSinceReferenceDate) - Double(i * 3600) ) ?? 0)
+    for i in 0...288 {
+        let date = Date.init(timeIntervalSinceReferenceDate: TimeInterval(exactly: corrected_current_date_double_value - Double(i * 1800) ) ?? 0)
         global_history.week_dates.append(date_formatter.string(from: date))
     }
     for i in [0, 24, 48, 72, 96, 120, 144, 168, 192, 216, 240, 264, 288, 312, 336, 360, 384, 408, 432, 456, 480, 504, 528, 552, 576, 600, 624, 648, 672, 696, 720] {
-        let date = Date.init(timeIntervalSinceReferenceDate: TimeInterval(exactly: Double(Date.init().timeIntervalSinceReferenceDate) - Double(i * 3600) ) ?? 0)
+        let date = Date.init(timeIntervalSinceReferenceDate: TimeInterval(exactly: corrected_current_date_double_value - Double(i * 1800) ) ?? 0)
         global_history.month_dates.append(date_formatter.string(from: date))
     }
     switch month_date_formatter.string(from: Date.init()) {
@@ -57,8 +58,6 @@ func setup_data(completion: @escaping (Bool, Error?) -> Void) {
             
             global_history.electricity_usage += houseDetails?.electricity_history?[month_date] ?? 0.0
         }
-        //global_history.electricity_usage = Double(round(global_history.electricity_usage * 10) / 10)
-        //global_history.electricity_usage = global_history.electricity_usage / 31
         
         //YEAR
         for i in 0...364 {
@@ -82,7 +81,7 @@ func setup_data(completion: @escaping (Bool, Error?) -> Void) {
             month_number = month_number_for_current_result(result: month_number)
             let date_to_search = date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))
             if !(Int(month_date_formatter.string(from: Date.init())) == Int(month_date_formatter.string(from: Date.init() - TimeInterval(i * 24 * 3600))) && i > 60) {
-                global_history.yearly_history[month_number] += Double(houseDetails?.electricity_history?[date_to_search] ?? 0) //+ global_history.yearly_history[month_number]
+                global_history.yearly_history[month_number] += Double(houseDetails?.electricity_history?[date_to_search] ?? 0)
             }
         }
         //ALL

@@ -24,16 +24,13 @@
                                 <color key="backgroundColor" red="0.047058823529411764" green="0.0078431372549019607" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Kf3-AB-Jqw">
-                                <rect key="frame" x="20" y="261" width="374" height="374"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Kf3-AB-Jqw" secondAttribute="height" multiplier="1:1" id="QKk-WO-bmN"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nudged_big.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Kf3-AB-Jqw">
+                                <rect key="frame" x="0.0" y="-752" width="414" height="2400"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team members" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WY5-RR-OpT">
-                                <rect key="frame" x="70" y="747" width="274" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noor Amin, Alexandre Gaubil, Keshav Khosla, Warren Liow, Zhi Zhang" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WY5-RR-OpT">
+                                <rect key="frame" x="70" y="731.5" width="274" height="30.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <color key="textColor" name="orange-color"/>
+                                <color key="textColor" name="blue-color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nudged" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8u-m3-Qn0">
@@ -42,7 +39,7 @@
                                     <constraint firstAttribute="width" constant="300" id="pZi-19-Jgy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <color key="textColor" name="orange-color"/>
+                                <color key="textColor" name="blue-color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -50,13 +47,13 @@
                         <constraints>
                             <constraint firstItem="Kf3-AB-Jqw" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="3V8-8n-9XX"/>
                             <constraint firstItem="Kf3-AB-Jqw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ERJ-da-iAE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kf3-AB-Jqw" secondAttribute="trailing" constant="20" id="HT8-4A-mHh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kf3-AB-Jqw" secondAttribute="trailing" id="HT8-4A-mHh"/>
                             <constraint firstItem="nFR-2E-0E1" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Kch-r0-b42"/>
                             <constraint firstAttribute="bottom" secondItem="nFR-2E-0E1" secondAttribute="bottom" id="PbJ-tf-tGK"/>
                             <constraint firstItem="WY5-RR-OpT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="QGf-oi-xgx"/>
                             <constraint firstItem="S8u-m3-Qn0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="QHI-4c-ooU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WY5-RR-OpT" secondAttribute="trailing" constant="70" id="RRT-c6-VUL"/>
-                            <constraint firstItem="Kf3-AB-Jqw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fhV-28-eBK"/>
+                            <constraint firstItem="Kf3-AB-Jqw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fhV-28-eBK"/>
                             <constraint firstItem="S8u-m3-Qn0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="tSq-uz-j1H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WY5-RR-OpT" secondAttribute="bottom" constant="100" id="yDs-uX-auf"/>
                             <constraint firstAttribute="trailing" secondItem="nFR-2E-0E1" secondAttribute="trailing" id="yN0-d9-5Q4"/>
@@ -71,9 +68,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="1024" height="1024"/>
-        <namedColor name="orange-color">
-            <color red="1" green="0.59999999999999998" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="nudged_big.jpg" width="600" height="2400"/>
+        <namedColor name="blue-color">
+            <color red="0.15686274509803921" green="0.59215686274509804" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

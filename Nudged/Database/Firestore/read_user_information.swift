@@ -56,3 +56,27 @@ func create_postal_codes() {
         
     }
 }
+
+func reset_usage_data() {
+    var electricity_history: [String: Double] = [:]
+    
+    let date_formatter = DateFormatter()
+    date_formatter.dateFormat = "yyyy_MM_dd HH:mm"
+    
+    let corrected_current_date_double_value: Double = Double(Date().timeIntervalSinceReferenceDate) - Double(Date().timeIntervalSinceReferenceDate).truncatingRemainder(dividingBy: 1800)
+    
+    for i in -400...400 {
+    //for i in -2400...52560 {
+        let date = Date.init(timeIntervalSinceReferenceDate: TimeInterval(exactly: corrected_current_date_double_value - Double(i * 1800) ) ?? 0)
+        electricity_history[date_formatter.string(from: date)] = Double.random(in: 12...18)
+    }
+    
+    Firestore.firestore().collection("houses/Singapore/01").document("0C97A1icrNmm5efNcPNT").setData([
+        "h": 4,
+        "k": "a",
+        "p": "011024",
+        "s": 151,
+        "e": electricity_history
+        ])
+}
+
