@@ -64,6 +64,7 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
     var week_dates: [String] = []
     var week_final_dates: [String] = []
     var month_dates: [String] = []
+    var month_final_dates: [String] = []
     var year_dates: [String] = []
     var all_dates: [String] = []
     
@@ -112,7 +113,8 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
         year_dates = []
         all_dates = []
         weekly_history = [0, 0, 0, 0, 0, 0, 0]
-        monthly_history = []
+        monthly_history = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        print("Number: \(monthly_history.count)")
         yearly_history = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         all_history = []
         
@@ -132,7 +134,7 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
             let date = Date.init(timeIntervalSinceReferenceDate: TimeInterval(exactly: corrected_current_date_double_value - Double(i * 1800) ) ?? 0)
             week_dates.append(date_formatter.string(from: date))
         }
-        //print("Week dates: \(week_dates)")
+        
         for i in 0...1440 {
         //for i in [0, 24, 48, 72, 96, 120, 144, 168, 192, 216, 240, 264, 288, 312, 336, 360, 384, 408, 432, 456, 480, 504, 528, 552, 576, 600, 624, 648, 672, 696, 720] {
             let date = Date.init(timeIntervalSinceReferenceDate: TimeInterval(exactly: corrected_current_date_double_value - Double(i * 1800) ) ?? 0)
@@ -154,8 +156,8 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
         case "12": year_dates = ["DE", "NO", "OC", "SE", "AU", "JL", "JN", "MA", "AP", "MR", "FE", "JA"]
         default: break
         }
-        
-        read_user_information(identifier: "0C97A1icrNmm5efNcPNT", completion: { houseDetails, error in
+        //0C97A1icrNmm5efNcPNT
+        read_user_information(identifier: "00001-test", completion: { houseDetails, error in
             
             for day_date in self.day_dates {
                 self.daily_history.append(houseDetails?.electricity_history?[day_date])
@@ -169,9 +171,7 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
                     self.week_final_dates.append(String(day_number))
                 }
                 switch day_number {
-                case self.day_date_formatter.string(from: Date()):
-                    self.weekly_history[0] = (self.weekly_history[0] ?? 0) + (houseDetails?.electricity_history?[week_date] ?? 0)
-                    //print("\(houseDetails?.electricity_history?[week_date]) => \(self.weekly_history[0])")
+                case self.day_date_formatter.string(from: Date()): self.weekly_history[0] = (self.weekly_history[0] ?? 0) + (houseDetails?.electricity_history?[week_date] ?? 0)
                 case self.day_date_formatter.string(from: Date() - 86400): self.weekly_history[1] = (self.weekly_history[1] ?? 0) + (houseDetails?.electricity_history?[week_date] ?? 0)
                 case self.day_date_formatter.string(from: Date() - 172800): self.weekly_history[2] = (self.weekly_history[2] ?? 0) + (houseDetails?.electricity_history?[week_date] ?? 0)
                 case self.day_date_formatter.string(from: Date() - 259200): self.weekly_history[3] = (self.weekly_history[3] ?? 0) + (houseDetails?.electricity_history?[week_date] ?? 0)
@@ -180,19 +180,22 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
                 case self.day_date_formatter.string(from: Date() - 518400): self.weekly_history[6] = (self.weekly_history[6] ?? 0) + (houseDetails?.electricity_history?[week_date] ?? 0)
                 default: break
                 }
-                
-                //let number_of_seconds = Date().timeIntervalSinceReferenceDate - (date_formatter.date(from: week_date) ?? Date()).timeIntervalSinceReferenceDate
-                
-                //let number_of_days_ago = Int(((Date().timeIntervalSinceReferenceDate - (date_formatter.date(from: week_date) ?? Date()).timeIntervalSinceReferenceDate) / 86400).rounded(.down))
-                //print((Date().timeIntervalSinceReferenceDate - (date_formatter.date(from: week_date) ?? Date()).timeIntervalSinceReferenceDate) / 86400)
-                //print("\(week_date): \(number_of_days_ago)")
-                //self.weekly_history.append(houseDetails?.electricity_history?[week_date])
             }
-            print(self.day_date_formatter.string(from: Date()))
-            print(self.weekly_history)
+            
             //MONTH
             for month_date in self.month_dates {
-                self.monthly_history.append(houseDetails?.electricity_history?[month_date])
+                
+                let day_number = self.day_date_formatter.string(from: (date_formatter.date(from: month_date) ?? Date()))
+                if !(self.month_final_dates.contains(String(day_number))) {
+                    self.month_final_dates.append(String(day_number))
+                }
+                
+                var i = 0
+                while self.day_date_formatter.string(from: Date() - TimeInterval(86400 * i)) != day_number {
+                    i += 1
+                }
+                
+                self.monthly_history[i] = (self.monthly_history[i] ?? 0 ) + ((houseDetails?.electricity_history?[month_date]) ?? 0)
             }
             //YEAR
             for i in 0...364 {
@@ -216,7 +219,7 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
                 month_number = self.month_number_for_current_result(result: month_number)
                 let date_to_search = date_formatter.string(from: Date.init() - TimeInterval(i * 3600 * 24))
                 if !(Int(self.month_date_formatter.string(from: Date.init())) == Int(self.month_date_formatter.string(from: Date.init() - TimeInterval(i * 24 * 3600))) && i > 60) {
-                    self.yearly_history[month_number] += Double(houseDetails?.electricity_history?[date_to_search] ?? 0) //+ self.yearly_history[month_number]
+                    self.yearly_history[month_number] += Double(houseDetails?.electricity_history?[date_to_search] ?? 0)
                 }
             }
             //ALL
@@ -276,7 +279,7 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
                 
                 if type_of_graph == "day" {
                     let linePlot = LinePlot(identifier: type_of_graph)
-                    linePlot.lineColor = UIColor(named: "green-color") ?? UIColor.black
+                    linePlot.lineColor = .white
                     linePlot.lineStyle = .smooth
                     graphView.dataPointSpacing = 7
                     graphView.rightmostPointPadding = 5

@@ -128,39 +128,43 @@ class HomeScreenVC: UIViewController {
         
         create_new_tip(title: "10 Ways to Reduce Your Home’s Power Use", subtitle: "These 10 great tips will help you to reduce your household's electricity consumption!", url: "www.angieslist.com/articles/10-ways-reduce-your-home-s-power-use.htm")
         
-        create_new_tip(title: "What Uses the Most Energy in Your Home?", subtitle: "", url: "www.visualcapitalist.com/what-uses-the-most-energy-home/")
+        create_new_tip(title: "What Uses the Most Energy in Your Home?", subtitle: "Learn how to control the most power-hungry devices in your home, and drastically reduce your consumption!", url: "www.visualcapitalist.com/what-uses-the-most-energy-home/")
         
         create_new_tip(title: "What Are the Effects of Overusing Energy?", subtitle: "The effects of living beyond our means", url: "homeguides.sfgate.com/effects-overusing-energy-78753.html")
         
         create_new_tip(title: "The Big Thaw", subtitle: "Ice caps melting at an alarming rate!", url: "www.nationalgeographic.com/environment/global-warming/big-thaw/")
         
-        create_new_tip(title: "Unplug two appliances", subtitle: "", url: "www.apple.com")
+        create_new_tip(title: "", subtitle: "", url: "www.apple.com")
         
-        create_new_tip(title: " 😅", subtitle: "", url: "www.apple.com")
+        create_new_tip(title: "", subtitle: "", url: "www.apple.com")
         
         scroll_view.contentSize.height += 10
     }
     
     private func create_new_tip(title: String, subtitle: String, url: String) {
         let tip_view = UIView(frame: CGRect(x: 20, y: scroll_view.contentSize.height + 6, width: UIScreen.main.bounds.width - 40, height: 100))
-        scroll_view.contentSize.height += 106
         tip_view.backgroundColor = UIColor(named: "blue-color") ?? UIColor.lightGray
         tip_view.layer.cornerRadius = 15
         
-        let title_label = UILabel(frame: CGRect(x: 5, y: 0, width: UIScreen.main.bounds.width - 50, height: 30))
+        let title_label = UILabel(frame: CGRect(x: 5, y: 10, width: UIScreen.main.bounds.width - 50, height: 30))
         title_label.text = title
-        tip_view.addSubview(title_label)
         title_label.numberOfLines = 0
         title_label.font = UIFont.preferredFont(forTextStyle: .title2)
+        title_label.frame = frame_for_label(label: title_label)
+        title_label.textColor = .white
         
-        let subtitle_label = UILabel(frame: CGRect(x: 5, y: 30, width: UIScreen.main.bounds.width - 50, height: 70))
+        print(title_label.frame.height + 10)
+        let subtitle_label = UILabel(frame: CGRect(x: 5, y: title_label.frame.height + 10, width: UIScreen.main.bounds.width - 50, height: 70))
         subtitle_label.text = subtitle
-        tip_view.addSubview(subtitle_label)
         subtitle_label.numberOfLines = 0
+        subtitle_label.textColor = .white
+        subtitle_label.frame = frame_for_label(label: subtitle_label)
+        subtitle_label.frame = CGRect(x: 5, y: title_label.frame.height + 10, width: UIScreen.main.bounds.width - 50, height: subtitle_label.frame.height)
         
         let gesture_recogniser = UIGestureRecognizer(target: self, action: #selector(self.open_article(sender:)))
         title_label.addGestureRecognizer(gesture_recogniser)
         subtitle_label.addGestureRecognizer(gesture_recogniser)
+        tip_view.addGestureRecognizer(gesture_recogniser)
         title_label.isUserInteractionEnabled = true
         subtitle_label.isUserInteractionEnabled = true
         
@@ -168,6 +172,10 @@ class HomeScreenVC: UIViewController {
         title_label.tag = urls_to_open.count - 1
         subtitle_label.tag = urls_to_open.count - 1
         
+        tip_view.frame = CGRect(x: 20, y: scroll_view.contentSize.height + 6, width: UIScreen.main.bounds.width - 40, height: title_label.frame.height + subtitle_label.frame.height + 20)
+        tip_view.addSubview(title_label)
+        tip_view.addSubview(subtitle_label)
+        scroll_view.contentSize.height += title_label.frame.height + subtitle_label.frame.height + 25
         scroll_view.addSubview(tip_view)
     }
     

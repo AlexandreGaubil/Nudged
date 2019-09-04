@@ -60,7 +60,7 @@
                                     <segment title="Year"/>
                                     <segment title="All"/>
                                 </segments>
-                                <color key="tintColor" red="0.58823529409999997" green="0.73725490199999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="time_graph_selector_SC_value_changed:" destination="8rJ-Kc-sve" eventType="valueChanged" id="ffY-vv-Tvf"/>
                                 </connections>
