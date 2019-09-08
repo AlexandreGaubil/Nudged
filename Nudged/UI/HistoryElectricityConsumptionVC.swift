@@ -23,6 +23,10 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
         }
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     func label(atIndex pointIndex: Int) -> String {
         switch type_of_graph {
         case "day":
@@ -87,9 +91,6 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let colorTop =  #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1).cgColor
-        let colorBottom = #colorLiteral(red: 0.004859850742, green: 0.09608627111, blue: 0.5749928951, alpha: 1).cgColor
-        
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [colorTop, colorBottom]
         gradientLayer.locations = [0.0, 1.0]
@@ -102,7 +103,7 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
         year_date_formatter.dateFormat = "yyyy"
         let loading_view = UILabel(frame: CGRect(x: 0, y: 0, width: graph_stack_view.frame.width, height: graph_stack_view.frame.height))
         loading_view.textAlignment = .center
-        loading_view.backgroundColor = #colorLiteral(red: 0.5882352941, green: 0.737254902, blue: 0.368627451, alpha: 1)
+        loading_view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         loading_view.text = "Loading data..."
         graph_stack_view.addSubview(loading_view)
         let date_formatter = DateFormatter()
@@ -257,8 +258,8 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
                 let graphView = ScrollableGraphView(frame: CGRect(x: 0, y: 0, width: graph_stack_view.frame.width, height: graph_stack_view.frame.height), dataSource: self)
                 graphView.backgroundFillColor = .init(red: 0, green: 0, blue: 0, alpha: 0)
                 let barPlot = BarPlot(identifier: type_of_graph)
-                barPlot.barColor = UIColor(named: "green-color") ?? UIColor.black
-                barPlot.barLineColor = UIColor(named: "dark-blue-color") ?? UIColor.black
+                barPlot.barColor = .white //UIColor(named: "green-color") ?? UIColor.black
+                barPlot.barLineColor = .white //UIColor(named: "dark-blue-color") ?? UIColor.black
                 let referenceLines = ReferenceLines()
                 referenceLines.referenceLineColor = .white
                 referenceLines.referenceLineLabelColor = .white
@@ -294,14 +295,14 @@ class HistoryElectricityConsumptionVC: UIViewController, ScrollableGraphViewData
             } else {
                 let no_data_view = UILabel(frame: CGRect(x: 0, y: 0, width: graph_stack_view.frame.width, height: graph_stack_view.frame.height))
                 no_data_view.textAlignment = .center
-                no_data_view.backgroundColor = #colorLiteral(red: 0.5882352941, green: 0.737254902, blue: 0.368627451, alpha: 1)
+                no_data_view.backgroundColor = .white
                 no_data_view.text = "There is no data to display for this period"
                 graph_stack_view.addSubview(no_data_view)
             }
         } else {
             let error_view = UILabel(frame: CGRect(x: 0, y: 0, width: graph_stack_view.frame.width, height: graph_stack_view.frame.height))
             error_view.textAlignment = .center
-            error_view.backgroundColor = #colorLiteral(red: 0.5882352941, green: 0.737254902, blue: 0.368627451, alpha: 1)
+            error_view.backgroundColor = .white
             error_view.text = "Error loading data"
             graph_stack_view.addSubview(error_view)
         }

@@ -34,6 +34,7 @@
 		087843D522E4D23800988CE9 /* HouseDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087843D422E4D23800988CE9 /* HouseDetails.swift */; };
 		087843D622E4D23800988CE9 /* HouseDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087843D422E4D23800988CE9 /* HouseDetails.swift */; };
 		087843D822E4D2F800988CE9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087843D722E4D2F800988CE9 /* MapKit.framework */; };
+		0889F0512322EAF8006B776E /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889F0502322EAF8006B776E /* SettingsVC.swift */; };
 		08C340BA22E77500008D9ED6 /* compare_house_consumption_to_houses_with_same_postal_code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C340B922E77500008D9ED6 /* compare_house_consumption_to_houses_with_same_postal_code.swift */; };
 		08FC91E222EB5C74002DABBF /* StartupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC91E122EB5C74002DABBF /* StartupVC.swift */; };
 		08FC91E422EB60FE002DABBF /* make_button_inverted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC91E322EB60FE002DABBF /* make_button_inverted.swift */; };
@@ -82,6 +83,7 @@
 		087843D022E4D14F00988CE9 /* read_user_information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = read_user_information.swift; sourceTree = "<group>"; };
 		087843D422E4D23800988CE9 /* HouseDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetails.swift; sourceTree = "<group>"; };
 		087843D722E4D2F800988CE9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0889F0502322EAF8006B776E /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		08C340B922E77500008D9ED6 /* compare_house_consumption_to_houses_with_same_postal_code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = compare_house_consumption_to_houses_with_same_postal_code.swift; sourceTree = "<group>"; };
 		08FC91E122EB5C74002DABBF /* StartupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupVC.swift; sourceTree = "<group>"; };
 		08FC91E322EB60FE002DABBF /* make_button_inverted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = make_button_inverted.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				08FC91E122EB5C74002DABBF /* StartupVC.swift */,
 				086F552022E4CA9A0042CFD7 /* HomeScreenVC.swift */,
 				086F552222E4CA9A0042CFD7 /* HistoryElectricityConsumptionVC.swift */,
+				0889F0502322EAF8006B776E /* SettingsVC.swift */,
 				0819D1F5230B13E900C91B5C /* Social */,
 				08FC91EB22ED9C01002DABBF /* Support */,
 			);
@@ -445,6 +448,7 @@
 				087843D522E4D23800988CE9 /* HouseDetails.swift in Sources */,
 				0819D1BD2300CCE900C91B5C /* Global parameters.swift in Sources */,
 				0819D1F4230ABB9A00C91B5C /* SocialVC.swift in Sources */,
+				0889F0512322EAF8006B776E /* SettingsVC.swift in Sources */,
 				0819D1F7230B140600C91B5C /* Kinds of Achievements.swift in Sources */,
 				08359D6722EB5A5100468B88 /* HouseType.swift in Sources */,
 				0819D1C12301D9A700C91B5C /* History object.swift in Sources */,

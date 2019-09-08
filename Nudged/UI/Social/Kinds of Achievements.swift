@@ -9,9 +9,9 @@
 import Foundation
 
 enum KindOfAchievements {
-    case trees
-    case polar_bears
-    case love
+    case tree
+    case polar_bear
+    case heart
     case awareness
     case sea
     case time

@@ -8,17 +8,26 @@
 
 import UIKit
 
+let colorTop =  #colorLiteral(red: 0.08235294118, green: 0.4901960784, blue: 0.4941176471, alpha: 1).cgColor
+let colorBottom = #colorLiteral(red: 0.02745098039, green: 0.1490196078, blue: 0.1568627451, alpha: 1).cgColor
+
 class HomeScreenVC: UIViewController {
 
     @IBOutlet weak var scroll_view: UIScrollView!
     var urls_to_open: [String] = []
     var current_tag = 0
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let colorTop =  #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1).cgColor
-        let colorBottom = #colorLiteral(red: 0.004859850742, green: 0.09608627111, blue: 0.5749928951, alpha: 1).cgColor
+        print("Now")
+        print(normal_electric_consumption(house_type: .separate_house, house_surface: 300, number_of_house_inhabitants: 5, normal_house_in_neighborhood: normal_house_one))
+        print(normal_electric_consumption(house_type: .apartment, house_surface: 70, number_of_house_inhabitants: 2, normal_house_in_neighborhood: normal_house_one))
+        print("end")
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [colorTop, colorBottom]
@@ -134,9 +143,9 @@ class HomeScreenVC: UIViewController {
         
         create_new_tip(title: "The Big Thaw", subtitle: "Ice caps melting at an alarming rate!", url: "www.nationalgeographic.com/environment/global-warming/big-thaw/")
         
-        create_new_tip(title: "", subtitle: "", url: "www.apple.com")
+//        create_new_tip(title: "", subtitle: "", url: "www.apple.com")
         
-        create_new_tip(title: "", subtitle: "", url: "www.apple.com")
+//        create_new_tip(title: "", subtitle: "", url: "www.apple.com")
         
         scroll_view.contentSize.height += 10
     }
